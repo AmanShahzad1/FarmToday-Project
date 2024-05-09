@@ -61,11 +61,12 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-							<option>Sign In</option>
-						</select>
-					</div>
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In" onchange="redirect(this.value)">
+                            <option>Register/Login</option>
+                            <option value="register">Register Here</option>
+                            <option value="login">Sign In</option>
+                        </select>
+                    </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -652,6 +653,15 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+        function redirect(value) {
+            if (value === "register") {
+                window.location.href = "sign-in/login.html"; // Replace with the actual register page URL
+            } else if (value === "login") {
+                window.location.href = "sign-in/login.html"; // Replace with the actual login page URL
+            }
+        }   
+    </script>
 </body>
 
 </html>
